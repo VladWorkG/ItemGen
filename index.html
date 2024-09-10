@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ItemGen</title>
+</head>
+<body>
+    <header></header>
+    <main>
+        <div>
+            <span>Привет! Это луталка.</span>
+        </div>
+        <div>
+            <div id="Trues">
+                <button>Открыть сундук</button>
+            </div>
+            <div id="NewItem">
+
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+<script>
+    function getRandomTupe() {
+        let Tupe = ["Шлем", "Нагрудник", "Ботинки", "Меч", "Лук", "Книга заклинаний"];
+        let i = Math.round(Math.random() * (Tupe.length - 1) + 1);
+        return Tupe[i - 1]; // Генератор Типов
+    }
+    function getRandomClass() {
+        let Tupe = ["Обычный", "Обычный", "Хороший", "Редкий", "Эпический","Обычный", "Хороший", "Обычный", "Хороший", "Редкий",  "Обычный", "Хороший", "Редкий", "Эпический", "Легендарный"];
+        let i = Math.round(Math.random() * (Tupe.length - 1) + 1);
+        return Tupe[i - 1]; // Генератор Типов
+    }
+
+
+
+
+    const NewItem = document.getElementById('NewItem');
+    const Trues = document.getElementById('Trues') || null;
+    Trues.addEventListener('click', function() {
+            
+        
+            const NewItemHe = document.createElement('div');
+            NewItemHe.id = getRandomTupe();
+            NewItemHe.classList.add(getRandomClass());
+            NewItemHe.innerHTML = 
+            (NewItemHe.id) +  '<br>' + 
+            (NewItemHe.classList) 
+
+
+            NewItem.appendChild(NewItemHe);
+        });
+</script>
+</html>
